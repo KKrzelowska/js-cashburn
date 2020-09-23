@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "noEmit": false,
+    "strict": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "outDir" : "build"
+  },
+  "include": [
+    "src"
+  ]
+}
+
+
+
