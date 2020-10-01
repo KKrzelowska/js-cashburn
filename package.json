@@ -17,10 +17,12 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "chart.js": "^2.9.3",
     "html-webpack-plugin": "^4.5.0",
     "mobx": "^5.15.7",
     "mobx-react": "^6.3.0",
     "react": "^16.13.1",
+    "react-chartjs-2": "^2.10.0",
     "react-dom": "^16.13.1"
   }
 }

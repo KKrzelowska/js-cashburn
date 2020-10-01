@@ -1,3 +1,2 @@
-#exclude files
-
-node_modules
+/bundle
+/node_modules
