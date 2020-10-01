@@ -22,6 +22,13 @@ export class NameForm extends React.Component {
          </label>
          <input type="submit" value="Submit" />
        </form>
+       <form onSubmit={this.handleSubmit}>
+       <label>
+         Podaj oszczedności: 
+         <input type="number" value={this.state.value} onChange={this.handleChange} />
+       </label>
+       <input type="submit" value="Submit" />
+     </form>
      );
    }
  }
