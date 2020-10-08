@@ -8,6 +8,9 @@ module.exports = {
     path: path.join(__dirname, "/bundle"),
     filename: "index_bundle.js",
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js', '.jsx']
+  },
   devServer: {
     inline: true,
     port: 1337,
@@ -15,9 +18,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.[tj]sx?$/,
         exclude: /node_modules/,
-        loader: "ts-loader",
+        loader: "babel-loader",
       },
     ],
   },
