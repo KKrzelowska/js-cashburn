@@ -4,13 +4,12 @@ import ReactDOM from "react-dom";
 class NameForm extends React.Component {
   constructor(props) {
     super(props);
-    props.callback;
     this.state = { value: 0 };
 
     this.handleChange = (event) => this.setState({ value: event.target.value });
     this.handleSubmit = () => {
       props.callback(this.state.value)
-    
+
     };
   }
 
