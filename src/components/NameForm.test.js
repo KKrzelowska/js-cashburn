@@ -7,8 +7,8 @@ Enzyme.configure({adapter: new Adapter()});
 
 test("When user inputs price and submits then callback is executed", () => {
     const callback = jest.fn();
-    const nameForm = shallow(<NameForm/>)
-    nameForm.find(".input").simulate("input", {target: {value: 21}});
+    const nameForm = shallow(<NameForm callback={callback}/>)
+    nameForm.find(".input").simulate("change", {target: {value: 21}});
     nameForm.find(".button").simulate("click");
     expect(callback).toBeCalledWith(21);
 })

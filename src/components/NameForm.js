@@ -4,28 +4,35 @@ import ReactDOM from "react-dom";
 class NameForm extends React.Component {
   constructor(props) {
     super(props);
+    props.callback;
     this.state = { value: 0 };
 
-    this.handleChange = () => this.setState({ value: event.target.value });
+    this.handleChange = (event) => this.setState({ value: event.target.value });
     this.handleSubmit = () => {
-      alert("Amount: " + this.state.value);
-      event.preventDefault();
+      props.callback(this.state.value)
+    
     };
   }
 
+
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Podaj kwotę:
+      <div>
+
+        <form onSubmit={this.handleSubmit(this.props.callback)}>
+          <label>
+            Podaj kwotę:
           <input
-            type="number"
-            value={this.state.value}
-            onChange={this.handleChange}
-          />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+              className="input"
+              type="number"
+              value={this.state.value}
+              onChange={this.handleChange}
+            />
+          </label>
+          <input className="button" type="submit" value="Submit" />
+        </form>
+        <button variant="primary" >Navigate</button>{' '}
+      </div>
     );
   }
 }
