@@ -1,5 +1,6 @@
 
 let savedValues= new Array();
+let a;
 export function saveValues(values: { date: Date, value: number }[]): void {
   savedValues=values;
 }
