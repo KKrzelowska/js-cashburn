@@ -3,10 +3,12 @@ import NameForm from "./components/NameForm";
 import Chart from "./components/Chart";
 
 const App = () => (
-  <div className="App">
-    <NameForm />
-    <Chart />
-  </div>
+    <div className="App">
+        <NameForm callback={(number) => {
+            alert(number);
+        }}/>
+        <Chart/>
+    </div>
 );
 
 export default App;
