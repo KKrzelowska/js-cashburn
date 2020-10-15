@@ -6,8 +6,8 @@
   "type": "common",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production", 
-    "test":  "jest"
+    "build": "webpack --mode production",
+    "test": "jest"
   },
   "author": "Karo",
   "license": "ISC",
@@ -35,6 +35,7 @@
   "dependencies": {
     "chart.js": "^2.9.3",
     "html-webpack-plugin": "^4.5.0",
+    "jest-localstorage-mock": "^2.4.3",
     "mobx": "^5.15.7",
     "mobx-react": "^6.3.0",
     "react": "^16.13.1",
