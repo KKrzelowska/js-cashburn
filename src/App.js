@@ -4,7 +4,7 @@ import Chart from "./components/Chart";
 
 const App = () => (
   <div className="App">
-    <NameForm />
+   <NameForm/>
     <Chart />
   </div>
 );
