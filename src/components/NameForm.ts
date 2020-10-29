@@ -16,6 +16,7 @@ class NameForm extends React.Component {
   render() {
     return (
       <div>
+
         <form onSubmit={this.handleSubmit(this.props.callback)}>
           <label>
 
