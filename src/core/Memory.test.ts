@@ -10,9 +10,3 @@ test("Test that Value Can Be Saved And Retrieved", () => {
     expect(getValues()).toEqual(value);
 })
 
-
-test("Adding two arrays works", () => {
-    const array_1 = [1, 2]
-    const array_2 = ['siema', 'locho'];
-    expect(addArray(array_1, array_2)).toEqual([1,2,'siema','locho'])
-})

@@ -19,28 +19,23 @@ class NameForm extends React.Component<PROPS, STATE> {
     this.handleSubmit = () => {
       props.callback(this.state.value)
     };
-  }
+  };
 
   render() {
     return (
-      <div>
+      <div className = "button">
 
-        <form onSubmit={(e)=>{this.handleSubmit(); e.stopPropagation()}}>
           <label >
-
             Podaj kwotę:
           <input
               className = "input"
               type = "number"
               value = {this.state.value}
               onChange = {this.handleChange}
+              onSubmit = {this.handleSubmit}
             />
-          </label>
-          <input className="button" type="submit" value="Submit" />
-        </form>
-      </div>
-    );
-  }
-}
+          </label></div>
 
+    );
+};
 export default NameForm;
