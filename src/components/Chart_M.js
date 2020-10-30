@@ -1,5 +1,5 @@
 import React from "react";
-import { Line } from "react-chartjs-2";
+import {Line} from "react-chartjs-2";
 
 const state = {
     labels: [1, 2, 3, 4, 5, 6, 7, 8],
@@ -22,8 +22,8 @@ const Chart = () => {
             <Line
                 data={state}
                 options={{
-                    title: { display: true, text: "Current Month", fontSize: 20 },
-                    legend: { display: true, position: "right" },
+                    title: {display: true, text: "Current Month", fontSize: 20},
+                    legend: {display: true, position: "right"},
                 }}
             />
         </div>

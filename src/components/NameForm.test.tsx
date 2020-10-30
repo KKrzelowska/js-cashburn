@@ -1,6 +1,6 @@
 import Enzyme, {shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import NameForm from "./NameForm1";
+import NameForm from "./NameForm";
 import React, {ReactElement} from "react";
 
 Enzyme.configure({adapter: new Adapter()});
