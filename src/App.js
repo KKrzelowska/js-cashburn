@@ -1,5 +1,5 @@
 import React from "react";
-import NameForm from "./components/NameForm";
+import NameForm from "./components/NameForm1";
 import Chart from "./components/Chart";
 
 const App = () => (

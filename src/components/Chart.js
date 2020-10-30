@@ -28,7 +28,6 @@ const Chart = () => {
             />
         </div>
     );
-    t;
 };
 
 export default Chart;
