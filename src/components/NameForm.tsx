@@ -1,4 +1,4 @@
-import React, {ChangeEventHandler, EventHandler, FormEventHandler, MouseEventHandler, SyntheticEvent} from "react";
+import React, {ChangeEventHandler, MouseEventHandler} from "react";
 import ReactDOM from "react-dom";
 
 type Props = { callback: (arg: number) => void };
@@ -15,6 +15,7 @@ class NameForm extends React.Component<Props, State> {
 
         this.handleChange = (event) => this.setState({value: parseInt(event.target.value)});
         this.handleSubmit = () => props.callback(this.state.value);
+
     };
 
     render() {
