@@ -6,7 +6,6 @@ type State = { value: number };
 
 class NameForm extends React.Component<Props, State> {
     handleChange: ChangeEventHandler<HTMLInputElement>;
-    //handleChange: {event: SyntheticEvent<Element, Event>};
     handleSubmit: () => void;
     state: { value: number };
 
