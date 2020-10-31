@@ -1,4 +1,4 @@
-import React, {ChangeEventHandler, SyntheticEvent} from "react";
+import React, {ChangeEventHandler, EventHandler, FormEventHandler, MouseEventHandler, SyntheticEvent} from "react";
 import ReactDOM from "react-dom";
 
 type Props = { callback: (arg: number) => void };
@@ -6,7 +6,7 @@ type State = { value: number };
 
 class NameForm extends React.Component<Props, State> {
     handleChange: ChangeEventHandler<HTMLInputElement>;
-    handleSubmit: () => void;
+    handleSubmit: MouseEventHandler<HTMLButtonElement>;
     state: { value: number };
 
     constructor(props: Props) {
@@ -14,9 +14,7 @@ class NameForm extends React.Component<Props, State> {
         this.state = {value: 0};
 
         this.handleChange = (event) => this.setState({value: parseInt(event.target.value)});
-        this.handleSubmit = () => {
-            props.callback(this.state.value)
-        };
+        this.handleSubmit = () => props.callback(this.state.value);
     };
 
     render() {
