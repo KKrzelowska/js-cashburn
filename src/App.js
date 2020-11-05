@@ -7,7 +7,8 @@ const App = () => (
         <NameForm callback={(number) => {
             alert(number);
         }}/>
-        <Chart/>
+        <Chart values ={[[new Date(), 20.20],[new Date(), 21.20]]}
+/>
     </div>
 );
 
