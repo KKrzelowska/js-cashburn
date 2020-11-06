@@ -1,4 +1,4 @@
-const storageKey = 'values';
+export const storageKey = 'values';
 
 export function saveValues(values: { date: Date, value: number }[]): void {
     localStorage.setItem(storageKey, JSON.stringify(values))
