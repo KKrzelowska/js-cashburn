@@ -1,6 +1,6 @@
 import {getValues, saveValues, storageKey} from "./Memory";
 
-beforeEach(()=> {
+beforeEach(() => {
     localStorage.clear();
 })
 
@@ -21,4 +21,3 @@ test("Test that Value Can Be Saved And Retrieved", () => {
     saveValues(value);
     expect(getValues()).toEqual(JSON.parse(JSON.stringify(value)));
 })
-
