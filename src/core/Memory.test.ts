@@ -12,6 +12,7 @@ test("Test That Value Retrieved will Be Empty If not Set", () => {
 
 test('When saveValues is executed Then data should be saved in localstorage', () => {
     saveValues(valuesArrMock);
+    expect(localStorage.setItem).toHaveBeenCalledWith(storageKey, JSON.stringify(valuesArrMock));
     expect(localStorage.__STORE__[storageKey]).toBe(JSON.stringify(valuesArrMock));
     expect(Object.keys(localStorage.__STORE__).length).toBe(1);
 })
