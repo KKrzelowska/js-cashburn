@@ -6,15 +6,18 @@ import ChartComponent, { Line } from "react-chartjs-2";
 class Chart extends Component {
   constructor(props) {
     super(props);
-    let values = props.values;
-    
+    let array = props.values;
+    let dates = array.map(([date,])=>date),
+        values = array.map(([,value])=>value);
+
+    let seconds = dates.map(date=> Math.floor(new Date().getTime()/1000))
     this.state = {
       chartData: {
-        labels: values.map((value) => value[0]),
+        labels: seconds,
         datasets: [
           {
-            label: "# of Votes",
-            data: values.map((value) => value[1]),
+            label: "# Savings",
+            data: values,
             backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
            
@@ -23,9 +26,13 @@ class Chart extends Component {
               "rgba(255, 99, 132, 1)",
             ],
             borderWidth: 1
+           
           }
+          
         ]
+      
       }
+      
     };
   }
   render() {
@@ -33,7 +40,7 @@ class Chart extends Component {
       <div>
         <div className="chart">
           Chart Component
-          <Line data={this.state.chartData} options={{}} />
+          <Line data={this.state.chartData} options={{ }} />
         </div>
         
       </div>
