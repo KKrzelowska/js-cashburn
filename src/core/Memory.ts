@@ -1,7 +1,7 @@
 export const storageKey = 'values';
 
-function parseValueDateToBeDateObj (valuesFromLS: { date: string, value: number }[]): { date: Date, value: number }[] {
-    return valuesFromLS.map(dataObj => ({
+function recoverTypesFromParsedJSON (valuesFromLocalStorage: { date: string, value: number }[]): { date: Date, value: number }[] {
+    return valuesFromLocalStorage.map(dataObj => ({
         date: new Date(dataObj.date),
         value: dataObj.value
     }));
@@ -12,5 +12,5 @@ export function saveValues(values: { date: Date, value: number }[]): void {
 }
 
 export function getValues(): { date: Date, value: number }[] {
-    return parseValueDateToBeDateObj(JSON.parse(localStorage.getItem(storageKey) ?? '[]'));
+    return recoverTypesFromParsedJSON(JSON.parse(localStorage.getItem(storageKey) ?? '[]'));
 }
