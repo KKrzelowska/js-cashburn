@@ -11,11 +11,13 @@ class NameForm extends React.Component<Props, State> {
 
     constructor(props: Props) {
         super(props);
-        this.state = {value: 0};
+        this.state = {
+            value: 0
+        };
 
         this.handleChange = (event) => this.setState({value: parseInt(event.target.value)});
         this.handleSubmit = () => props.callback(this.state.value);
-    };
+    } ;
 
     render() {
         return (
@@ -27,7 +29,8 @@ class NameForm extends React.Component<Props, State> {
                     className="input"
                     type="number"
                     value={this.state.value}
-                    onChange={this.handleChange}/>
+                    onChange={this.handleChange}
+                    />
                 <button className="button" onClick={this.handleSubmit}>Zatwierdź</button>
             </div>
 
