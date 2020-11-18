@@ -1,9 +1,16 @@
-let values_in_browser: { date: Date, value: number }[] = [];
+export const storageKey = 'values';
+
+function recoverTypesFromParsedJSON (valuesFromLocalStorage: { date: string, value: number }[]): { date: Date, value: number }[] {
+    return valuesFromLocalStorage.map(dataObj => ({
+        date: new Date(dataObj.date),
+        value: dataObj.value
+    }));
+}
 
 export function saveValues(values: { date: Date, value: number }[]): void {
-    values_in_browser = values;
+    localStorage.setItem(storageKey, JSON.stringify(values))
 }
 
 export function getValues(): { date: Date, value: number }[] {
-    return values_in_browser;
+    return recoverTypesFromParsedJSON(JSON.parse(localStorage.getItem(storageKey) ?? '[]'));
 }
