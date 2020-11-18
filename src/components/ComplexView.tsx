@@ -26,11 +26,13 @@ class ComplexView extends React.Component<Props, State> {
         };
 
         this.changestate = () => {
-            this.state.value == false ? this.setState({value: true}) : this.setState({value: false})
-        }
+            this.setState({value: true})};
+
         this.checkChildrenCallback = () => {
             this.changestate();
         }
+        this.changeview = () => this.state.value == false ?
+            (this.props.children(this.checkChildrenCallback)[0]) : (this.props.children(0)[1]);
 
     }
 
@@ -38,8 +40,7 @@ class ComplexView extends React.Component<Props, State> {
     render() {
         return (
             <div>
-                {this.changeview = this.state.value == false ?
-                    (this.props.children(this.checkChildrenCallback)[0]) : (this.props.children(0)[1])}
+                {this.changeview()}
 
             </div>
         )
