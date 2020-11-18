@@ -1,3 +1,4 @@
+
 let values_in_browser: { date: Date, value: number }[] = [];
 
 export function saveValues(values: { date: Date, value: number }[]): void {
