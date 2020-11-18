@@ -6,7 +6,6 @@ const App = () => (
         <NameForm callback={(number) => {
             alert(number);
         }}/>
-        <Chart/>
     </div>
 );
 
