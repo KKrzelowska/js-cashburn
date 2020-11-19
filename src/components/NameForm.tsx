@@ -1,8 +1,11 @@
 import React, {ChangeEventHandler, EventHandler, FormEventHandler, MouseEventHandler, SyntheticEvent} from "react";
 import ReactDOM from "react-dom";
-
+import {Input,Button,Label} from "../styled/styledNameForm";
 type Props = { callback: (arg: number) => void };
 type State = { value: number };
+
+
+
 
 class NameForm extends React.Component<Props, State> {
     handleChange: ChangeEventHandler<HTMLInputElement>;
@@ -20,15 +23,16 @@ class NameForm extends React.Component<Props, State> {
     render() {
         return (
             <div>
-                <label>
+                <Label>
                     Podaj kwotę:
-                </label>
-                <input
+                </Label>
+                <Input
                     className="input"
                     type="number"
                     value={this.state.value}
                     onChange={this.handleChange}/>
-                <button className="button" onClick={this.handleSubmit}>Zatwierdź</button>
+                <Button onClick={this.handleSubmit}>Zatwierdź</Button>
+                
             </div>
 
         );
