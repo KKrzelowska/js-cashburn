@@ -30,7 +30,6 @@ class NameForm extends React.Component<Props, State> {
                     value={this.state.value}
                     onChange={this.handleChange}/>
                 <Button onClick={this.handleSubmit}>Zatwierdź</Button>
-                <Rotate>Hedgehog</Rotate>
             </div>
 
         );
