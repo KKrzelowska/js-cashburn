@@ -1,46 +1,30 @@
-import React, {
-    ChangeEventHandler,
-    EventHandler,
-    FormEventHandler,
-    MouseEventHandler,
-    SyntheticEvent,
-    useCallback
-} from "react";
-import ReactDOM from "react-dom";
-import {shallow} from "enzyme";
+import React from "react";
 
 type Props = { children: (arg: any) => [object, object] };
 type State = {
-    value: boolean
+    isSwitched: boolean
 };
 
 class ComplexView extends React.Component<Props, State> {
-    changeview: any;
-    changestate: any
-    checkChildrenCallback: any;
+
+    switchView(component_to_view: any) {
+        return component_to_view
+    }
+    changeState = () => {this.setState({isSwitched: true})}
 
     constructor(props: Props) {
         super(props);
         this.state = {
-            value: false,
+            isSwitched: false,
         };
-
-        this.changestate = () => {
-            this.setState({value: true})};
-
-        this.checkChildrenCallback = () => {
-            this.changestate();
-        }
-        this.changeview = () => this.state.value == false ?
-            (this.props.children(this.checkChildrenCallback)[0]) : (this.props.children(0)[1]);
-
     }
 
-
     render() {
+
+        const component_to_view = this.state.isSwitched == false ? (this.props.children(this.changeState)[0]) : (this.props.children(0)[1])
         return (
             <div>
-                {this.changeview()}
+                {this.switchView(component_to_view)}
 
             </div>
         )
