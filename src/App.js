@@ -1,5 +1,6 @@
 import React from "react";
 import NameForm from "./components/NameForm";
+import Chart from "./components/Chart";
 
 const App = () => (
     <div className="App">
@@ -7,9 +8,7 @@ const App = () => (
             alert(number);
         }}/>
 
-        <Chart values ={[[new Date(1995,11,17), 20.20],[new Date(1995,11,20), 21.20],[new Date(1995,11,23), 22.20],[new Date(1995,11,27), 23.20]]}
-/>
-
+       <Chart values={[[new Date(), 20.20], [new Date(), 21.20]]}/>
     </div>
 );
 

@@ -1,4 +1,5 @@
 
+
 export const storageKey = 'values';
 
 function recoverTypesFromParsedJSON (valuesFromLocalStorage: { date: string, value: number }[]): { date: Date, value: number }[] {
