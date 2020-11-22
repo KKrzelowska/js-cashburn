@@ -1,4 +1,5 @@
-import styled, {keyframes} from "styled-components";
+import React, {Component} from 'react'
+import styled, {keyframes} from 'styled-components';
 
 const Button = styled.button`
 display: inline-block;

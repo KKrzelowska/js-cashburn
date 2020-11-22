@@ -9,8 +9,10 @@ class Chart extends Component {
     let array = props.values;
     let dates = array.map(([date,])=>date),
         values = array.map(([,value])=>value);
-
     let seconds = dates.map(date=> Math.floor(new Date().getTime()/1000))
+
+
+
     this.state = {
       chartData: {
         labels: seconds,
@@ -34,13 +36,18 @@ class Chart extends Component {
       }
       
     };
+   
+     
+    
   }
   render() {
     return (
       <div>
-        <div className="chart">
+        <div className="Chart" style={{position: "relative", width: 600, height:550}}>
           Chart Component
-          <Line data={this.state.chartData} options={{ }} />
+          <Line data={this.state.chartData} options={{ scales:{
+            xAxis:[{stacked: true }]
+          }}} />
         </div>
         
       </div>
