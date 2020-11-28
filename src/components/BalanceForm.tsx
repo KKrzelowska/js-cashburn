@@ -2,13 +2,13 @@ import React, {ChangeEventHandler, EventHandler, FormEventHandler, MouseEventHan
 import ReactDOM from "react-dom";
 import {Button, Input, Label} from "../styled/styledNameForm";
 
-type Props = { callback: (arg: number) => void };
-type State = { value: number };
+type Props = { callback: (value:number) => void };
+type State = {value: number };
 
-class NameForm extends React.Component<Props, State> {
+class BalanceForm extends React.Component<Props, State> {
     handleChange: ChangeEventHandler<HTMLInputElement>;
     handleSubmit: MouseEventHandler<HTMLButtonElement>;
-    state: { value: number };
+    state: {value: number };
 
     constructor(props: Props) {
         super(props);
@@ -29,10 +29,10 @@ class NameForm extends React.Component<Props, State> {
                     type="number"
                     value={this.state.value}
                     onChange={this.handleChange}/>
-                <Button onClick={this.handleSubmit}>Zatwierdź</Button>
+                <Button className = "button" onClick={this.handleSubmit}>Zatwierdź</Button>
             </div>
 
         );
     };
 };
-export default NameForm;
+export default BalanceForm;
