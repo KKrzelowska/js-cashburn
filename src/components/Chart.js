@@ -1,44 +1,85 @@
-import React, {Component} from "react";
-import ChartComponent, {Line} from "react-chartjs-2";
-
+import React, { Component } from "react";
+import ChartComponent, { Line } from "react-chartjs-2";
+import moment from "moment";
 
 class Chart extends Component {
-    constructor(props) {
-        super(props);
-        let values = props.values;
+  constructor(props) {
+    super(props);
+    let array = props.values;
 
-        this.state = {
-            chartData: {
-                labels: values.map((value) => value[0]),
-                datasets: [
-                    {
-                        label: "# of Votes",
-                        data: values.map((value) => value[1]),
-                        backgroundColor: [
-                            "rgba(255, 99, 132, 0.2)",
+    const currentMonthDates = Array.from(
+      { length: moment().daysInMonth() },
+      (x, i) => moment().startOf("month").add(i, "days")
+    );
+    let transform = () => array.map((arr) => ({ t: arr[0], y: arr[1] }));
 
-                        ],
-                        borderColor: [
-                            "rgba(255, 99, 132, 1)",
-                        ],
-                        borderWidth: 1
-                    }
-                ]
-            }
-        };
-    }
+    this.state = {
+      chartData: {
+        labels: currentMonthDates,
+        datasets: [
+          {
+            label: "# Savings",
+            data: transform(),
 
-    render() {
-        return (
-            <div>
-                <div className="chart">
-                    Chart Component
-                    <Line data={this.state.chartData} options={{}}/>
-                </div>
+            borderColor: ["rgba(255, 99, 132, 1)"],
+            borderWidth: 1,
+          },
+        ],
+      },
+    };
+  }
+  render() {
+    return (
+      <div>
+        <div
+          className="Chart"
+          style={{ position: "relative", width: 600, height: 550 }}
+        >
+          Chart Component
+          <Line
+            data={this.state.chartData}
+            options={{
+              scales: {
+                xAxes: [
+                  {
+                    gridLines: {
+                      display: true,
+                    },
+                    type: "time",
+                    position: "bottom",
+                    time: {
+                      displayFormats: { day: "DD" },
+                      tooltipFormat: "DD",
+                      unit: "day",
+                    },
+                    gridLines: {
+                      display: false,
+                    },
+                  },
+                ],
 
-            </div>
-        );
-    }
+                yAxes: [
+                  {
+                    ticks: {
+                      beginAtZero: true,
+                    },
+                    gridLines: {
+                      display: false,
+                    },
+                  },
+                ],
+                plugins: {
+                  datalabels: {
+                    display: false,
+                  },
+                },
+              },
+            }}
+          />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Chart;
