@@ -18,7 +18,7 @@ describe('StatedBalanceForm', () => {
 
 test("When user inputs, then get_values is called ", () => {
     const save_value = jest.fn();
-    const get_value = jest.fn(()=>[]);
+    const get_value = jest.fn(() => []);
     const StatedbalanceForm = mount(<StatedBalanceForm saveValues={save_value} getValues={get_value}/>);
     StatedbalanceForm.find("button").simulate("click");
     expect(get_value).toBeCalled();
@@ -26,7 +26,7 @@ test("When user inputs, then get_values is called ", () => {
 
 test("When user inputs, then save_value is called", () => {
     const save_value = jest.fn();
-    const get_value = jest.fn(()=>[]);
+    const get_value = jest.fn(() => []);
     const StatedbalanceForm = mount(<StatedBalanceForm saveValues={save_value} getValues={get_value}/>);
     StatedbalanceForm.find("button").simulate("click");
     expect(save_value).toBeCalled();
@@ -34,18 +34,26 @@ test("When user inputs, then save_value is called", () => {
 
 test("SaveValues save values to Memory's empty storage ", () => {
     const save_value = jest.fn();
-    const get_value = jest.fn(()=>[]);
+    const get_value = jest.fn(() => []);
+    const currentDate = new Date();
     const StatedbalanceForm = mount(<StatedBalanceForm saveValues={save_value} getValues={get_value}/>);
     StatedbalanceForm.find("input").simulate("change", {target: {value: 21}});
     StatedbalanceForm.find("button").simulate("click");
-    expect(save_value).toBeCalledWith([{"date": new Date(), "value": 21}]);
+    const {date, value}: { date: Date, value: number } = save_value.mock.calls[0][0][0];
+    expect(date.getTime()).toBeGreaterThan(currentDate.getTime())
+    expect(value).toEqual(21)
 })
 
 test("SaveValues save values to Memory's previous values ", () => {
     const save_value = jest.fn();
-    const get_value = jest.fn(()=>[{"date": 12-21-2020, "value": 4}]);
+    const currentDate = new Date();
+    const get_value = jest.fn(() => [{"date": currentDate, "value": 4}]);
     const StatedbalanceForm = mount(<StatedBalanceForm saveValues={save_value} getValues={get_value}/>);
     StatedbalanceForm.find("input").simulate("change", {target: {value: 21}});
     StatedbalanceForm.find("button").simulate("click");
-    expect(save_value).toBeCalledWith([{"date": new Date(), "value": 21}, {"date": 12-21-2020, "value": 4}]);
+    const values: { date: Date, value: number }[] = save_value.mock.calls[0][0];
+    expect((values[0].date).getTime()).toBeLessThanOrEqual(new Date().getTime());
+    expect(values[1].date).toEqual(currentDate);
+    expect(values[0].value).toEqual(21);
+    expect(values[1].value).toEqual(4);
 })

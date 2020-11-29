@@ -5,6 +5,7 @@ import BalanceForm from "./BalanceForm";
 type Props = { getValues: () => { date: Date, value: number }[], saveValues: (values: { date: Date, value: number }[]) => void };
 type State = { value: number };
 
+
 class StatedBalanceForm extends React.Component<Props, State> {
     save_to_memory(value_from_balanceform: number): void {
         var values_dates_from_memory = this.props.getValues();
@@ -23,7 +24,7 @@ class StatedBalanceForm extends React.Component<Props, State> {
         return (
             <div>
                 <BalanceForm callback={(value) => {
-                    this.save_to_memory(value)
+                    this.save_to_memory(value); alert(value)
                 }}/>
             </div>
 
