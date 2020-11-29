@@ -5,12 +5,11 @@ import moment from "moment";
 class Chart extends Component {
   constructor(props) {
     super(props);
-    let array = props.values;
     const currentMonthDates = Array.from(
       { length: moment().daysInMonth() },
       (x, i) => moment().startOf("month").add(i, "days")
     );
-    let transform = () => array.map((arr) => ({ t: arr[0], y: arr[1] }));
+    let data = () => props.values.map((arr) => ({ t: arr[0], y: arr[1] }));
 
 
     this.state = {
@@ -19,8 +18,7 @@ class Chart extends Component {
         datasets: [
           {
             label: "# Savings",
-            data: transform(),
-
+            data: data(),
             borderColor: ["rgba(255, 99, 132, 1)"],
             borderWidth: 1,
           },
