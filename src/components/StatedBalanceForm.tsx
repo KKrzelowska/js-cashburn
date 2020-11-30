@@ -7,11 +7,11 @@ type State = { value: number };
 
 
 class StatedBalanceForm extends React.Component<Props, State> {
-    save_to_memory(value_from_balanceform: number): void {
-        var values_dates_from_memory = this.props.getValues();
-        var value_from_balanceform_with_date = {date: new Date(), value: value_from_balanceform};
-        var values_to_memory = [value_from_balanceform_with_date, ...values_dates_from_memory];
-        this.props.saveValues(values_to_memory);
+    saveToMemory(valueFromBalanceForm: number): void {
+        const valuesDatesFromMemory = this.props.getValues();
+        const valueFromBalanceFormWithDate = {date: new Date(), value: valueFromBalanceForm};
+        const valuesToMemory = [valueFromBalanceFormWithDate, ...valuesDatesFromMemory];
+        this.props.saveValues(valuesToMemory);
     };
 
     constructor(props: Props) {
@@ -24,7 +24,7 @@ class StatedBalanceForm extends React.Component<Props, State> {
         return (
             <div>
                 <BalanceForm callback={(value) => {
-                    this.save_to_memory(value); alert(value)
+                    this.saveToMemory(value);
                 }}/>
             </div>
 
@@ -32,5 +32,5 @@ class StatedBalanceForm extends React.Component<Props, State> {
     }
 }
 
-export default StatedBalanceForm
+export default StatedBalanceForm;
 
