@@ -24,7 +24,7 @@ class StatedBalanceForm extends React.Component<Props, State> {
         return (
             <div>
                 <BalanceForm callback={(value) => {
-                    this.save_to_memory(value); alert(value)
+                    this.save_to_memory(value);
                 }}/>
             </div>
 

@@ -13,10 +13,3 @@ test("When user inputs price and submits then callback is executed", () => {
     expect(callback).toBeCalledWith(21);
 })
 
-test("When user inputs price and submits then callback is executed", () => {
-    const callback = jest.fn();
-    const balanceForm = shallow(<BalanceForm callback={callback}/>);
-    balanceForm.find(".input").simulate("change", {target: {value: 21}});
-    balanceForm.find(".button").simulate("click");
-    expect(callback).toBeCalledWith(21);
-})

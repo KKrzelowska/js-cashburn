@@ -4,16 +4,17 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: "./src/main.js",
   devtool: "eval-source-map",
+  mode: "development",
   output: {
-    path: path.join(__dirname, "/bundle"),
-    filename: "index_bundle.js",
+    path: path.join(__dirname, "/public/script"),
+    filename: "bundle.js",
+    publicPath: "/script/"
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx']
   },
   devServer: {
-    inline: true,
-    port: 1337,
+    writeToDisk: true
   },
   module: {
     rules: [
@@ -24,9 +25,5 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/index.html",
-    }),
-  ],
+  plugins: [],
 };
