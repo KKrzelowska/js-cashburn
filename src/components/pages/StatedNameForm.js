@@ -1,6 +1,6 @@
 import React from "react";
-import StatedBalanceForm from "../components/StatedBalanceForm";
-import {getValues, saveValues} from "../core/Memory";
+import StatedBalanceForm from "../StatedBalanceForm";
+import {getValues, saveValues} from "../../core/Memory";
 
 let NameForm = () => {
   return (

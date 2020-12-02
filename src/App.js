@@ -4,9 +4,9 @@ import StatedBalanceForm from "./components/StatedBalanceForm";
 import {getValues, saveValues} from "./core/Memory";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Navigation from "./Pages/Navigation";
-import NameForm from "./Pages/StatedNameForm";
-import GraphForm from "./Pages/StatedGraphForm";
+import Navigation from "./components/pages/Navigation";
+import NameForm from "./components/pages/StatedNameForm";
+import GraphForm from "./components/pages/StatedGraphForm";
 
 const App = () => (
     <div className="App">
