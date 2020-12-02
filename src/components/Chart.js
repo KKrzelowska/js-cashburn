@@ -6,8 +6,7 @@ class Chart extends Component {
   constructor(props) {
     super(props);
     const currentMonthDates = Array.from(
-      { length: moment().daysInMonth() },
-      (x, i) => moment().startOf("month").add(i, "days")
+      { length: moment().daysInMonth() },(x, i) => moment().startOf("month").add(i, "days")
     );
     let data = () => props.values.map((arr) => ({ t: arr[0], y: arr[1] }));
 
@@ -42,19 +41,19 @@ class Chart extends Component {
               scales: {
                 xAxes: [
                   {
-                    gridLines: {
-                      display: true,
-                    },
                     type: "time",
                     position: "bottom",
                     time: {
                       displayFormats: { day: "DD" },
                       tooltipFormat: "DD",
                       unit: "day",
+                      maxTicksLimit: 31
                     },
+                    
                     gridLines: {
                       display: false,
-                    },
+                    }
+                     
                   },
                 ],
 

@@ -1,16 +1,29 @@
 import React from "react";
-import NameForm from "./components/BalanceForm";
 import Chart from "./components/Chart";
 import StatedBalanceForm from "./components/StatedBalanceForm";
 import {getValues, saveValues} from "./core/Memory";
 
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import MainPage from "./Pages/MainPage";
+import GraphPage from "./Pages/GraphPage";
+import Navigation from "./Pages/Navigation";
+import mainpage from "./Pages/MainPage";
+import graph from "./Pages/GraphPage";
 
 const App = () => (
     <div className="App">
-        <StatedBalanceForm getValues={getValues} saveValues={saveValues}/>
+        
+      <BrowserRouter>
+        <div>
+        <Navigation />
+          <Switch>
+            <Route path="/" component={mainpage} exact/>
+            <Route path="/graph" component={graph}/>
+          </Switch>
+        </div>
+      </BrowserRouter>
 
-        <Chart
-            values={[[new Date("November 17, 2020 03:24:00"), 20.20], [new Date("November 17, 2020 06:24:00"), 20.20], [new Date("November 19, 2020 12:24:00"), 42.20], [new Date("November 20, 2020 12:24:00"), 53.20]]}/>
+      
 
     </div>
 );
