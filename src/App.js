@@ -4,11 +4,9 @@ import StatedBalanceForm from "./components/StatedBalanceForm";
 import {getValues, saveValues} from "./core/Memory";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import MainPage from "./Pages/MainPage";
-import GraphPage from "./Pages/GraphPage";
 import Navigation from "./Pages/Navigation";
-import mainpage from "./Pages/MainPage";
-import graph from "./Pages/GraphPage";
+import NameForm from "./Pages/StatedNameForm";
+import GraphForm from "./Pages/StatedGraphForm";
 
 const App = () => (
     <div className="App">
@@ -17,8 +15,8 @@ const App = () => (
         <div>
         <Navigation />
           <Switch>
-            <Route path="/" component={mainpage} exact/>
-            <Route path="/graph" component={graph}/>
+            <Route path="/" component={NameForm} exact/>
+            <Route path="/graph" component={GraphForm}/>
           </Switch>
         </div>
       </BrowserRouter>

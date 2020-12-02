@@ -2,7 +2,7 @@ import React from "react";
 import StatedBalanceForm from "./../components/StatedBalanceForm";
 import {getValues, saveValues} from "./../core/Memory";
 
-let mainpage = () => {
+let NameForm = () => {
   return (
     <div>
       
@@ -12,4 +12,4 @@ let mainpage = () => {
   );
 }
 
-export default mainpage;
+export default NameForm;

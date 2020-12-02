@@ -1,6 +1,6 @@
 import React from "react";
 import Chart from "../components/Chart";
-let graph = () => {
+let GraphForm = () => {
   return (
     <div>
       <h1>GraphPage</h1>
@@ -16,4 +16,4 @@ let graph = () => {
   );
 }
 
-export default graph;
+export default GraphForm;
