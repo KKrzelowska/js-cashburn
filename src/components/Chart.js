@@ -49,7 +49,7 @@ class Chart extends Component {
                       unit: "day",
                       maxTicksLimit: 31
                     },
-                    
+                                       
                     gridLines: {
                       display: false,
                     }
