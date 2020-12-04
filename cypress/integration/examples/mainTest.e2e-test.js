@@ -1,13 +1,15 @@
+
 describe("main test", () => {
   it("open main site and check console", () => {
     cy.visit("http://localhost:8080")
-    
   });
 });
 
-Cypress.on('window:before:load', (win) => {
-  cy.spy(win.console, 'error');
-  cy.spy(win.console, 'warn');
+beforeEach(() => {
+  Cypress.on('window:before:load', (win) => {
+    cy.spy(win.console, 'error');
+    cy.spy(win.console, 'warn');
+  });
 });
 
 afterEach(() => {
