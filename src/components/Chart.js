@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ChartComponent, { Line } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 import moment from 'moment';
 
 class Chart extends Component {
