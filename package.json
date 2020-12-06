@@ -64,13 +64,13 @@
       "jest-localstorage-mock"
     ]
   },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown",
+    "*.{js,css,md}": "prettier --write"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-stage"
     }
-  },
-  "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown",
-    "*.{js,css,md}": "prettier --write"
   }
 }
