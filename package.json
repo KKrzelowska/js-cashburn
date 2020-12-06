@@ -34,6 +34,7 @@
     "jest-localstorage-mock": "^2.4.3",
     "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0",
     "ts-jest": "^26.4.1",
     "ts-loader": "^8.0.4",
     "typescript": "^4.0.3",
@@ -67,9 +68,7 @@
     ]
   },
   "lint-staged": {
-    "**/*": [
-      "prettier --write ./"
-    ]
+    "pre-commit": "pretty-quick --staged"
   },
   "husky": {
     "hooks": {
