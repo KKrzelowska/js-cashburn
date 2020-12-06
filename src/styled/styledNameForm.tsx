@@ -1,26 +1,28 @@
-import React, {Component} from 'react'
-import styled, {keyframes} from 'styled-components';
+import React, { Component } from 'react';
+import styled, { keyframes } from 'styled-components';
 
 const Button = styled.button`
-display: inline-block;
-background: papayawhip;
-padding: 0.5em;
-margin: 0.5em;
-border: none;
-color: palevioletred;
-  font-weight: bold;`
+  display: inline-block;
+  background: papayawhip;
+  padding: 0.5em;
+  margin: 0.5em;
+  border: none;
+  color: palevioletred;
+  font-weight: bold;
+`;
 
 const Label = styled.label`
-color: palevioletred;
-font-weight: bold;`
+  color: palevioletred;
+  font-weight: bold;
+`;
 
 const Input = styled.input`
-color: palevioletred;
-font-weight: bold;
-padding: 0.5em;
-margin: 0.5em;
-background: papayawhip;
-`
+  color: palevioletred;
+  font-weight: bold;
+  padding: 0.5em;
+  margin: 0.5em;
+  background: papayawhip;
+`;
 const rotate = keyframes`
   from {
     transform: rotate(0deg);
@@ -37,4 +39,4 @@ const Rotate = styled.div`
   font-size: 1.2rem;
 `;
 
-export {Input, Button, Rotate, Label};
+export { Input, Button, Rotate, Label };
