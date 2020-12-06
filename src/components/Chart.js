@@ -47,7 +47,7 @@ class Chart extends Component {
                       displayFormats: { day: 'DD' },
                       tooltipFormat: 'DD',
                       unit: 'day'
-                    },
+                    }
                   }
                 ],
 
