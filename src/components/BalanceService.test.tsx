@@ -2,6 +2,7 @@ import Enzyme, {mount} from "enzyme";
 import Adapter from 'enzyme-adapter-react-16';
 import BalanceService from "./BalanceService";
 import React from "react";
+import MemoryService from "../core/Memory";
 
 Enzyme.configure({adapter: new Adapter()});
 
@@ -13,7 +14,7 @@ beforeEach(() => {
 test("Given empty storage when new balance is stored then it can be retrieved", () => {
     const getValues = jest.fn(() => []);
     const saveValues = jest.fn((value: number) => undefined);
-    const balanceServiceForEmptyStorage = new BalanceService();
+    const balanceServiceForEmptyStorage = new BalanceService(MemoryService.instance);
 
     balanceServiceForEmptyStorage.addBalance(21);
 
@@ -25,9 +26,8 @@ test("Given empty storage when new balance is stored then it can be retrieved", 
 
 test("Given populated storage when new balance is stored then it can be retrieved", () => {
     const getValues = jest.fn(() => []);
-
     const saveValues = jest.fn((value: number) => undefined);
-    const balanceServiceForPopulatedStorage = new BalanceService();
+    const balanceServiceForPopulatedStorage = new BalanceService(MemoryService.instance);
 
     balanceServiceForPopulatedStorage.addBalance(3);
     balanceServiceForPopulatedStorage.addBalance(22);

@@ -1,23 +1,22 @@
 import MemoryService from "../core/Memory";
 
 class BalanceService {
-    saveValues: (balances: { date: Date, value: number }[]) => void;
-    balances: { date: Date, value: number }[] ;
+    balances: { date: Date, value: number }[];
+    memoryService: MemoryService;
 
     addBalance(valueFromBalanceForm: number) {
-        let valuesDatesFromMemory = MemoryService.instance.getValues();
+        let valuesDatesFromMemory = this.memoryService.getValues();
         let valueWithDate = {date: new Date(), value: valueFromBalanceForm};
-        let valueToSave = [valueWithDate, ...valuesDatesFromMemory];
         this.balances = [valueWithDate, ...valuesDatesFromMemory];
-        MemoryService.instance.saveValues(valueToSave);
+        this.memoryService.saveValues(this.balances);
     }
 
-    constructor() {
-        this.saveValues = (balances) => MemoryService.instance.saveValues(balances);
+    constructor(memoryService: MemoryService) {
+        this.memoryService = MemoryService.instance
         this.balances = [];
     };
 
-    static instance = new BalanceService();
+    static instance = new BalanceService(MemoryService.instance);
 };
 
 export default BalanceService;
