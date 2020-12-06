@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navigation from './components/pages/Navigation';
 import NameForm from "./components/pages/StatedNameForm";
