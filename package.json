@@ -68,7 +68,7 @@
     ]
   },
   "lint-staged": {
-    "pre-commit": "pretty-quick --staged ./"
+    "pre-commit": "pretty-quick --staged"
   },
   "husky": {
     "hooks": {
