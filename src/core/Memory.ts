@@ -1,5 +1,3 @@
-
-
 export const storageKey = 'values';
 
 function recoverTypesFromParsedJSON (valuesFromLocalStorage: { date: string, value: number }[]): { date: Date, value: number }[] {
@@ -15,5 +13,4 @@ export function saveValues(values: { date: Date, value: number }[]): void {
 
 export function getValues(): { date: Date, value: number }[] {
     return recoverTypesFromParsedJSON(JSON.parse(localStorage.getItem(storageKey) ?? '[]'));
-
-}
+};

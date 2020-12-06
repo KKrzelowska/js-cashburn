@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`StatedBalanceForm renders without crashing given the required props 1`] = `ShallowWrapper {}`;
+exports[`StatedBalanceForm renders without crashing given the required props 1`] = `ReactWrapper {}`;
