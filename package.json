@@ -9,8 +9,7 @@
     "build": "webpack --mode production",
     "test": "jest",
     "cypress run": "cypress open mainTest.e2e-test",
-    "pretty": "prettier --check ./",
-    "precommit-msg": "echo 'Pre-commit checks...' && exit 0"
+    "pretty": "prettier --write ./"
   },
   "author": "Karo",
   "license": "ISC",
@@ -68,8 +67,7 @@
     ]
   },
   "lint-staged": {
-    "pre-commit": "prettier --check",
-    "*.{js,css,md}": "prettier --write"
+    "pre-commit": "prettier --check"
   },
   "husky": {
     "hooks": {
