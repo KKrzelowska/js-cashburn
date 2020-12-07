@@ -68,11 +68,12 @@
     ]
   },
   "lint-staged": {
-    "pre-commit": "prettier --check ./"
+    "pre-commit": "prettier --check",
+    "*.{js,css,md}": "prettier --write"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "precommit-msg"
+      "pre-commit": "lint-staged"
     }
   }
 }
