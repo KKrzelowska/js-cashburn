@@ -1,5 +1,4 @@
 import React from "react";
-import Chart from "./components/Chart";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import StoreProvider from './storeContext';
@@ -10,7 +9,7 @@ import GraphForm from "./components/pages/StatedGraphForm";
 const App = () => (
     <StoreProvider>
       <div className="App">
-          
+
         <BrowserRouter>
           <div>
           <Navigation />
