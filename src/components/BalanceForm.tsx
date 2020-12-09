@@ -1,17 +1,25 @@
-import React, { useState }from "react";
+import React, { useState, useContext }from "react";
 import { Button, Input, Label } from "../styled/styledNameForm";
+import { StoreContext } from "../storeContext";
 
 export default () => {
-    const [balance, setBalance] = useState();
+    const store = useContext(StoreContext);
+    const [balance, setBalance] = useState('');
 
-    const handleChange = (e) => setBalance(e.target.value) 
-    const handleSubmit = () => console.log(balance)
+    const handleChange = (e) => setBalance(e.target.value);
+    const handleSubmit = () => {
+        return (
+            store.addBalance(balance),
+            setBalance('')
+        )};
+
     return (
         <>
           <Label>Podaj kwotę:</Label>
             <Input
               className='input'
               type='number'
+              value={balance}
               onChange={(e) => handleChange(e)}
             />
           <Button className="button" onClick={() => handleSubmit()}>Zatwierdź</Button>

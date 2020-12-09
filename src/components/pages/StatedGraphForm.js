@@ -1,19 +1,22 @@
-import React from "react";
-import Chart from "../Chart";
+import React, { useContext } from "react";
+import { useObserver } from "mobx-react";
 
-let GraphForm = () => {
-  return (
-    <div>
+import Chart from "../Chart";
+import { StoreContext } from '../../storeContext';
+
+const GraphForm = () => {
+  const store = useContext(StoreContext);
+
+  return useObserver(() => (
+    <>
       <h1>GraphPage</h1>
       <Chart
-        values={[
-          [new Date("December 17, 2020 03:24:00"), 20.2],
-          [new Date("December 17, 2020 06:24:00"), 20.2],
-          [new Date("December 19, 2020 12:24:00"), 42.2],
-          [new Date("December 20, 2020 12:24:00"), 53.2],
-        ]}
+        values={
+          store.balance.map((x) => [new Date("December 1, 2020 03:24:00"), x]
+        )}
       />
-    </div>
+    </>
+  )
   );
 }
 

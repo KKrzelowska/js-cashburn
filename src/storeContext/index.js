@@ -6,8 +6,8 @@ export const StoreContext = createContext();
 
 const StoreProvider = ({ children }) => {
   const store = useLocalStore(() => ({
-    balance: ['context balance'],
-    addBalance: () => {
+    balance: [],
+    addBalance: (balanceValue) => {
       store.balance.push(balanceValue);
     }
   }));
