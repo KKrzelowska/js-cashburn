@@ -1,6 +1,6 @@
 import React, {ChangeEventHandler, MouseEventHandler,} from "react";
 
-import {Button, Input, Label} from "../styled/styledNameForm";
+import {Button, Input, Label, PageBox, Container} from "../styled/styledBalanceForm";
 
 type Props = { callback: (value: number) => void };
 type State = { value: number };
@@ -21,17 +21,19 @@ class BalanceForm extends React.Component<Props, State> {
 
     render() {
         return (
-            <div>
+            <Container>
+            <PageBox>
                 <Label>
-                    Podaj kwotę:
+                    PODAJ KWOTĘ
                 </Label>
                 <Input
                     className="input"
                     type="number"
                     value={this.state.value}
                     onChange={this.handleChange}/>
-                <Button className="button" onClick={this.handleSubmit}>Zatwierdź</Button>
-            </div>
+                <Button className="button" onClick={this.handleSubmit}>ZATWIERDŹ</Button>
+            </PageBox>
+            </Container>
 
         );
     };
