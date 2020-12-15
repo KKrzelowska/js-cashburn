@@ -1,4 +1,5 @@
 import MemoryService from "../core/Memory";
+import { makeAutoObservable } from "mobx"
 
 class BalanceService {
     balances: { date: Date, value: number }[];
@@ -14,9 +15,11 @@ class BalanceService {
     constructor(memoryService: MemoryService) {
         this.memoryService = MemoryService.instance
         this.balances = [];
+        makeAutoObservable(this)
     };
 
     static instance = new BalanceService(MemoryService.instance);
 };
+export const myBalance = new BalanceService()
 
 export default BalanceService;

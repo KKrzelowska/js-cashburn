@@ -3,17 +3,20 @@ import Chart from "./components/Chart";
 import StatedBalanceForm from "./components/StatedBalanceForm";
 import BalanceService from "./components/BalanceService";
 
+import { observer } from "mobx-react-lite"
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Navigation from "./components/pages/Navigation";
 import NameForm from "./components/pages/StatedNameForm";
 import GraphForm from "./components/pages/StatedGraphForm";
 
-const App = () => (
-    <div className="App">
+
+const App = observer(({ balances }) => (
+  <div className="App">
+    {console.log(balances)}
         <StatedBalanceForm balanceService={BalanceService.instance}/>
         <Chart
-            values={[[new Date("November 17, 2020 03:24:00"), 20.20], [new Date("November 17, 2020 06:24:00"), 20.20], [new Date("November 19, 2020 12:24:00"), 42.20], [new Date("November 20, 2020 12:24:00"), 53.20]]}/>
+            values={balances.memoryService.getValues().map((data) => Object.values(data))}/>
         
       <BrowserRouter>
         <div>
@@ -26,6 +29,6 @@ const App = () => (
       </BrowserRouter>
 
     </div>
-);
+));
 
 export default App;
