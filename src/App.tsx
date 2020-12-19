@@ -10,19 +10,15 @@ import Navigation from "./components/pages/Navigation";
 import NameForm from "./components/pages/StatedNameForm";
 import GraphForm from "./components/pages/StatedGraphForm";
 import ChartFunction from "./components/ChartFunctional";
-import { toJS } from "mobx";
 
 
 
-const App = observer(({ balanceService }: {balanceService: BalancesServices}) => {
+const App = observer(({ balanceService }: {balanceService: BalanceService}) => {
 
   return (
     <div className="App">
           <StatedBalanceForm balanceService={BalanceService.instance}/>
-          {/* <Chart
-              values={toJS(balanceService)}
-              /> */}
-          <ChartFunction values={toJS(balanceService)} />
+          <ChartFunction values={balanceService.getBalances()} />
         <BrowserRouter>
           <div>
           <Navigation />
@@ -34,6 +30,6 @@ const App = observer(({ balanceService }: {balanceService: BalancesServices}) =>
         </BrowserRouter>
 
       </div>
-)});
+)})
 
 export default App;

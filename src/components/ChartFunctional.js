@@ -1,15 +1,13 @@
-import React,  {useState, useEffect } from 'react';
+import React from 'react';
 import { Line } from "react-chartjs-2";
 import moment from "moment";
 
-export default ({values: { balances }}) => {
+export default ({values}) => {
     let currentMonthDates = Array.from(
       {length: moment().daysInMonth() },
       (x, i) => moment().startOf("month").add(i, "days") );
-      
-    let data = () => setDataFromValues(balances.map((arr) => ({ t: arr.date, y: arr.value })));
-  
-    const [dataFromValues, setDataFromValues] = useState([23])
+
+    const dataFromValues = values.map((arr) => ({ t: arr.date, y: arr.value }))
 
     const dataChart = {
       labels: currentMonthDates,
@@ -23,10 +21,6 @@ export default ({values: { balances }}) => {
       ],
     }
 
-    useEffect(() => {
-      data()
-    }, [balances])
-  
   return (
     <>
       <div
@@ -48,11 +42,9 @@ export default ({values: { balances }}) => {
                   unit: "day",
                   maxTicksLimit: 31
                 },
-                                    
                 gridLines: {
                   display: false,
                 }
-                  
               },
             ],
 
