@@ -4,6 +4,12 @@ import { makeAutoObservable } from "mobx"
 class BalanceService {
     balances: { date: Date, value: number }[];
     memoryService: MemoryService;
+    
+    constructor(memoryService: MemoryService) {
+        this.memoryService = MemoryService.instance
+        this.balances = this.memoryService.getValues();
+        makeAutoObservable(this)
+    };
 
     addBalance(valueFromBalanceForm: number) {
         let valuesDatesFromMemory = this.memoryService.getValues();
@@ -12,14 +18,8 @@ class BalanceService {
         this.memoryService.saveValues(this.balances);
     }
 
-    constructor(memoryService: MemoryService) {
-        this.memoryService = MemoryService.instance
-        this.balances = [];
-        makeAutoObservable(this)
-    };
-
     static instance = new BalanceService(MemoryService.instance);
 };
-export const myBalance = new BalanceService()
+
 
 export default BalanceService;

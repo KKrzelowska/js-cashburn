@@ -9,26 +9,31 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Navigation from "./components/pages/Navigation";
 import NameForm from "./components/pages/StatedNameForm";
 import GraphForm from "./components/pages/StatedGraphForm";
+import ChartFunction from "./components/ChartFunctional";
+import { toJS } from "mobx";
 
 
-const App = observer(({ balances }) => (
-  <div className="App">
-    {console.log(balances)}
-        <StatedBalanceForm balanceService={BalanceService.instance}/>
-        <Chart
-            values={balances.memoryService.getValues().map((data) => Object.values(data))}/>
-        
-      <BrowserRouter>
-        <div>
-        <Navigation />
-          <Switch>
-            <Route path="/" component={NameForm} exact/>
-            <Route path="/graph" component={GraphForm}/>
-          </Switch>
-        </div>
-      </BrowserRouter>
 
-    </div>
-));
+const App = observer(({ balanceService }: {balanceService: BalancesServices}) => {
+
+  return (
+    <div className="App">
+          <StatedBalanceForm balanceService={BalanceService.instance}/>
+          {/* <Chart
+              values={toJS(balanceService)}
+              /> */}
+          <ChartFunction values={toJS(balanceService)} />
+        <BrowserRouter>
+          <div>
+          <Navigation />
+            <Switch>
+              <Route path="/" component={NameForm} exact/>
+              <Route path="/graph" component={GraphForm}/>
+            </Switch>
+          </div>
+        </BrowserRouter>
+
+      </div>
+)});
 
 export default App;

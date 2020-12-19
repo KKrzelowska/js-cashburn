@@ -5,11 +5,12 @@ import moment from "moment";
 class Chart extends Component {
   constructor(props) {
     super(props);
-    const currentMonthDates = Array.from(
+
+    let currentMonthDates = Array.from(
       { length: moment().daysInMonth() },(x, i) => moment().startOf("month").add(i, "days")
     );
-    let data = () => props.values.map((arr) => ({ t: arr[0], y: arr[1] }));
-
+    let data = () => props.values.balances.map((arr) => ({ t: arr[0], y: arr[1] }));
+    data();
 
     this.state = {
       chartData: {
@@ -24,12 +25,12 @@ class Chart extends Component {
         ],
       },
     };
-  }
+  } 
+
   render() {
     return (
       <div>
-
-
+             <div>{this.props.values.balances.map((x) => x.values)}</div>
         <div
           className="Chart"
           style={{ position: "relative", width: 600, height: 550 }}
