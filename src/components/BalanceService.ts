@@ -1,10 +1,10 @@
-import MemoryService from "../core/Memory";
+import MemoryService from "../core/MemoryService";
 import { makeAutoObservable } from "mobx"
 
 class BalanceService {
-    balances: { date: Date, value: number }[];
-    memoryService: MemoryService;
-    
+    private balances: { date: Date, value: number }[];
+    private memoryService: MemoryService;
+
     constructor(memoryService: MemoryService) {
         this.memoryService = MemoryService.instance
         this.balances = this.memoryService.getValues();
@@ -18,8 +18,12 @@ class BalanceService {
         this.memoryService.saveValues(this.balances);
     }
 
-    static instance = new BalanceService(MemoryService.instance);
-};
+    public getBalances(){
+        return this.balances
+    }
+
+    public static instance = new BalanceService(MemoryService.instance);
+}
 
 
 export default BalanceService;

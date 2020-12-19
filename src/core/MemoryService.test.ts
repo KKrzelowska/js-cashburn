@@ -1,4 +1,4 @@
-import MemoryService from "./Memory";
+import MemoryService from "./MemoryService";
 
 const CORRECT_VALUE_TO_SAVE = [{date: new Date(), value: 21}, {date: new Date(), value: 48}];
 
