@@ -1,6 +1,3 @@
-import { makeAutoObservable } from "mobx"
-
-
 class MemoryService {
     storageKey: string = 'values';
 
