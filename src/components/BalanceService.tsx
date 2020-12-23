@@ -18,6 +18,7 @@ class BalanceService {
         this.memoryService.saveValues(this.balances);
     }
 
+
     static instance = new BalanceService(MemoryService.instance);
 };
 
