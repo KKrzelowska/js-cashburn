@@ -3,7 +3,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import React, {ReactElement} from "react";
 import StatedBalanceForm from "./StatedBalanceForm";
 import BalanceService from "./BalanceService";
-import MemoryService from "../core/Memory";
+import MemoryService from "../core/MemoryService";
 
 
 Enzyme.configure({adapter: new Adapter()});

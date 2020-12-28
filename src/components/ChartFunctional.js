@@ -2,19 +2,19 @@ import React from 'react';
 import { Line } from "react-chartjs-2";
 import moment from "moment";
 
-export default Chart = ({values: { balances }}) => {
+export default ({values}) => {
     let currentMonthDates = Array.from(
       {length: moment().daysInMonth() },
       (x, i) => moment().startOf("month").add(i, "days") );
-    let data = () => balances.map((arr) => ({ t: arr.date, y: arr.value }));
-  
+
+    const dataFromValues = values.map((arr) => ({ t: arr.date, y: arr.value }))
 
     const dataChart = {
       labels: currentMonthDates,
       datasets: [
         {
           label: "# Savings",
-          data: data(),
+          data: dataFromValues,
           borderColor: ["rgba(255, 99, 132, 1)"],
           borderWidth: 1,
         },
@@ -27,6 +27,7 @@ export default Chart = ({values: { balances }}) => {
       className="Chart"
       style={{ position: "relative", width: 600, height: 550 }}
       >
+      Chart  Functional Component
       <Line
          data={dataChart}
         options={{
@@ -41,11 +42,9 @@ export default Chart = ({values: { balances }}) => {
                   unit: "day",
                   maxTicksLimit: 31
                 },
-                                    
                 gridLines: {
                   display: false,
                 }
-                  
               },
             ],
 
