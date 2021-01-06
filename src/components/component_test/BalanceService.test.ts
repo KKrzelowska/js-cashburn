@@ -1,8 +1,8 @@
 import Enzyme, {mount} from "enzyme";
 import Adapter from 'enzyme-adapter-react-16';
-import BalanceService from "./BalanceService";
+import BalanceService from "../BalanceService";
 import React from "react";
-import MemoryService from "../core/MemoryService";
+import MemoryService from "../../core/MemoryService";
 
 Enzyme.configure({adapter: new Adapter()});
 
