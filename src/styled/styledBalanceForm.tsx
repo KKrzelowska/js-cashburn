@@ -1,21 +1,22 @@
 import React, {Component} from 'react'
 import styled, {keyframes} from 'styled-components';
-
+import {} from '../styled/styledBalanceForm';
 
 const Container = styled.div`
     align-items: center;
     display: flex;
     justify-content: center;
-    //height: 100vh;
-    //width: 100vw;
-;`
+    height: 100vh;
+    width: 100vw;`
+
 
 const PageBox = styled.div`
-display: flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-;`
+
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+`
 
 const scaled = keyframes`
   0% {
@@ -29,10 +30,10 @@ const scaled = keyframes`
   100% {
     transform: scale(1);
   }
-`;
+`
 
 const Button = styled.button`
-background: linear-gradient(135deg,#fa875a 0%,#fa875a 100%);
+    background: linear-gradient(135deg,#fa875a 0%,#fa875a 100%);
     box-shadow: 0 10px 20px -5px rgba(196,53,56,.5);
     height: 4rem;
     width:15rem;
@@ -45,52 +46,37 @@ background: linear-gradient(135deg,#fa875a 0%,#fa875a 100%);
     cursor: pointer;
     &:focus{
       animation: .75s ${scaled} cubic-bezier(0.770, 0.000, 0.175, 1.000) forwards;
-      outline: -webkit-focus-ring-color auto 0px;
+      outline: none;
     }
     margin-left:auto;
     margin-top:3rem;
-  ;`
+`
 
 const Label = styled.label`
-color: #524e4d;
+    color: #524e4d;
     font-family: Teko;
     font-size: 60px;
     font-weight: 400;
-    text-align: center;`
-
-const Input = styled.input`
-  -webkit-appearance: none;
-  border-radius: 0;
-  border: 1px solid #e0e2e5;
-  -webkit-box-shadow: 0 5px 20px 0 rgba(0,0,0,.1);
-  box-shadow: 0 5px 20px 0 rgba(0,0,0,.1);
-  color: #524e4d;
-  font-family: Teko;
-  font-size: 29px;
-  padding-left: 20px;
-  height: 3rem;
-  width: 30rem;
-  margin-top:4rem;
-  &:focus{
-    border: 1px solid #524e4d;
-    outline:none;
-  }
+    text-align: center;
 `
 
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
+const Input = styled.input`
+    -webkit-appearance: none;
+    border-radius: 0;
+    border: 1px solid #e0e2e5;
+    -webkit-box-shadow: 0 5px 20px 0 rgba(0,0,0,.1);
+    box-shadow: 0 5px 20px 0 rgba(0,0,0,.1);
+    color: #524e4d;
+    font-family: Teko;
+    font-size: 29px;
+    padding-left: 20px;
+    height: 3rem;
+    width: 30rem;
+    margin-top:4rem;
+    &:focus{
+      border: 1px solid #524e4d;
+      outline:none;
+    }
+`
 
-  to {
-    transform: rotate(360deg);
-  }
-`;
-const Rotate = styled.div`
-  display: inline-block;
-  animation: ${rotate} 2s linear infinite;
-  padding: 2rem 1rem;
-  font-size: 1.2rem;
-`;
-
-export {Input, Button, Rotate, Label, PageBox, Container};
+export {Input, Button, Label, PageBox, Container};

@@ -25,7 +25,7 @@ class BalanceForm extends React.Component<Props, State> {
             <PageBox>
                 <Label>
                     PODAJ KWOTĘ
-                </Label>
+                </Label >
                 <Input
                     className="input"
                     type="number"

@@ -1,7 +1,7 @@
 import Enzyme, {shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import React, {ReactElement} from "react";
-import BalanceForm from "./BalanceForm";
+import BalanceForm from "../BalanceForm";
 
 Enzyme.configure({adapter: new Adapter()});
 
