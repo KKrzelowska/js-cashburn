@@ -8,8 +8,7 @@ import BalanceService from "./components/BalanceService";
 import Navigation from "./components/pages/Navigation";
 import NameForm from "./components/pages/StatedNameForm";
 import GraphForm from "./components/pages/StatedGraphForm";
-
-
+import "./styled/index.css";
 
 const App = observer(({balanceService}: {balanceService: BalanceService}) => {
 
