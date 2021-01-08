@@ -10,7 +10,6 @@ import NameForm from "./components/pages/StatedNameForm";
 import GraphForm from "./components/pages/StatedGraphForm";
 import "./styled/index.css";
 
-
 const App = observer(({balanceService}: {balanceService: BalanceService}) => {
 
   return (
