@@ -1,5 +1,5 @@
 class MemoryService {
-    storageKey: string = 'values';
+    storageKey = 'values';
 
     recoverTypesFromParsedJSON(valuesFromLocalStorage: { date: string, value: number }[]): { date: Date, value: number }[] {
         return valuesFromLocalStorage.map(dataObj => ({
@@ -14,7 +14,7 @@ class MemoryService {
 
     getValues(): { date: Date, value: number }[] {
         return this.recoverTypesFromParsedJSON(JSON.parse(localStorage.getItem(this.storageKey) ?? '[]'));
-    };
+    }
 
     static instance = new MemoryService();
 }
