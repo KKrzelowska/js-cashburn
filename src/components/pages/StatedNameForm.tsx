@@ -2,7 +2,7 @@ import React from "react";
 import StatedBalanceForm from "../StatedBalanceForm";
 import BalanceService from "../BalanceService";
 
-let NameForm = () => {
+const NameForm = () => {
   return (
     <div>
       

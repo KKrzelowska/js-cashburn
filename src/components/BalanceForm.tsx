@@ -17,7 +17,7 @@ class BalanceForm extends React.Component<Props, State> {
             this.setState({value: parseInt(event.target.value)});
         this.handleSubmit = () => props.callback(this.state.value);
 
-    };
+    }
 
     render() {
         return (
@@ -34,8 +34,8 @@ class BalanceForm extends React.Component<Props, State> {
             </div>
 
         );
-    };
-};
+    }
+}
 export default BalanceForm;
 
 

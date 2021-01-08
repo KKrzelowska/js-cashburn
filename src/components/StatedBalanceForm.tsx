@@ -11,7 +11,7 @@ class StatedBalanceForm extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {value: 0};
-    };
+    }
 
     render() {
         const callback = (value: number) => {

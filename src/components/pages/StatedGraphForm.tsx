@@ -1,7 +1,7 @@
 import React from "react";
 
 import ChartFunctional from "../ChartFunctional";
-let GraphForm = () => {
+const GraphForm = () => {
   return (
     <div>
       <h1>GraphPage</h1>
