@@ -4,5 +4,5 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 export function goto({ route }) {
-    navigation.navigate({route});
+  navigation.navigate({ route });
 }
