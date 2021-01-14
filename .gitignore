@@ -2,4 +2,6 @@
 /node_modules
 /.idea
 /public/script/bundle.js
-debug.log
+/.vscode
+
+
