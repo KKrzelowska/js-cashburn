@@ -10,11 +10,8 @@
     "build": "webpack --mode production",
     "test": "jest",
     "cypress run": "cypress open mainTest.e2e-test",
-
-    "lint": "eslint .--ext .ts"
-
+    "lint": "eslint . --ext .ts",
     "prettier": "prettier --check ./"
-
   },
   "author": "Karo",
   "license": "ISC",
