@@ -21,7 +21,10 @@
         "prettier"
     ],
     "rules": { "camelcase": "off",
-                "no-eval":"off"
+                "no-eval":"off",
+                "react/jsx-uses-react": "error",
+                "react/jsx-uses-vars": "error",
+                "spaced-comment": "off"
                 
       
 
