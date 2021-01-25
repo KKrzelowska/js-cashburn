@@ -5,10 +5,14 @@
         "cypress/globals": true
     },
     "extends": [
+      "eslint:recommended",
         "plugin:react/recommended",
         "standard",
         "prettier",
-        "plugin:cypress/recommended"
+        "plugin:cypress/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+  
 
     ],
     "parser": "@typescript-eslint/parser",
@@ -16,7 +20,8 @@
         "ecmaFeatures": {
             "jsx": true
         },
-        "ecmaVersion": 12
+        "ecmaVersion": 12,
+        "sourceType": "module"
     },
     "plugins": [
         "react",
@@ -26,22 +31,16 @@
     ],
     "rules": { "camelcase": "off",
                 "no-eval":"off",
+                "spaced-comment": "off",
                 "react/jsx-uses-react": "error",
                 "react/jsx-uses-vars": "error",
-                "spaced-comment": "off",
+                
 
                 "cypress/no-assigning-return-values": "error",
                 "cypress/no-unnecessary-waiting": "error",
                 "cypress/assertion-before-screenshot": "warn",
                 "cypress/no-force": "warn",
-                "cypress/no-async-tests": "error"
-                
-      
-
-    
-      
-      
-        
+                "cypress/no-async-tests": "error"   
     }
 
 
