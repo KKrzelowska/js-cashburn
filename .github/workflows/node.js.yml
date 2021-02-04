@@ -30,9 +30,11 @@ jobs:
     - run: npm run build --if-present
     - run: npm test
     - name: Cypress-run
-      uses: cypress-io/github-action@v1
+      uses: cypress-io/github-action@v2
       with:
         build: npm run build
+        browser: chrome
         start: npm start
+        env: host=api.dev.local,port=4222
         wait-on: http://localhost:8080
 
