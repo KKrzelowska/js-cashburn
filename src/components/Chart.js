@@ -2,14 +2,13 @@ import React from 'react';
 import { Line } from 'react-chartjs-2';
 import moment from 'moment';
 
-export default ({ values }) => {
+const Chart = (values) => {
   let currentMonthDates = Array.from(
     { length: moment().daysInMonth() },
     (x, i) => moment().startOf('month').add(i, 'days')
   );
-
-  const dataFromValues = values.map(arr => ({ t: arr.date, y: arr.value }));
-
+  const dataFromValues = values.values.map(arr => ({ t: arr.date, y: arr.value }));
+  
   const dataChart = {
     labels: currentMonthDates,
     datasets: [
@@ -21,13 +20,13 @@ export default ({ values }) => {
       }
     ]
   };
-
+  console.log(values.values)
   return (
-    <>
+    <>    
       <div
         className="Chart"
         style={{ position: 'relative', width: 600, height: 550 }}>
-        Chart Functional Component
+
         <Line
           data={dataChart}
           options={{
@@ -70,3 +69,5 @@ export default ({ values }) => {
     </>
   );
 };
+
+export default Chart;
