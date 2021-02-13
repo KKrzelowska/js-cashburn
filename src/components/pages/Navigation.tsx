@@ -8,17 +8,18 @@ const Navigation = () => {
     <div>
       <h2>
         <BrowserRouter>
-          <h2>Welcome to cashburn, app for budget management</h2>
-          <li>
-            <Link to="/" className="nav-link">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/graph" className="nav-link">
-              Graph
-            </Link>
-          </li>
+          <ul>
+            <li>
+              <Link to="/" className="nav-link">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/graph" className="nav-link">
+                Graph
+              </Link>
+            </li>
+          </ul>
           <Switch>
             <Route path="/" component={NameForm} exact />
             <Route path="/graph" component={GraphForm} />
