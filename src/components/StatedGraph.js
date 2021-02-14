@@ -1,14 +1,19 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
+import { observer } from 'mobx-react-lite';
 import moment from 'moment';
 
-const Chart = (values) => {
-  let currentMonthDates = Array.from(
+
+const StatedGraph = observer(({ balanceService }) => {
+  const currentMonthDates = Array.from(
     { length: moment().daysInMonth() },
     (x, i) => moment().startOf('month').add(i, 'days')
   );
-  const dataFromValues = values.values.map(arr => ({ t: arr.date, y: arr.value }));
-  
+  const dataFromValues = balanceService.getBalances().map(arr => ({
+    t: arr.date,
+    y: arr.value
+  }));
+
   const dataChart = {
     labels: currentMonthDates,
     datasets: [
@@ -19,14 +24,12 @@ const Chart = (values) => {
         borderWidth: 1
       }
     ]
-  };
-  console.log(values.values)
+  }
   return (
-    <>    
+    <>
       <div
         className="Chart"
         style={{ position: 'relative', width: 600, height: 550 }}>
-
         <Line
           data={dataChart}
           options={{
@@ -68,6 +71,8 @@ const Chart = (values) => {
       </div>
     </>
   );
-};
+}
+);
 
-export default Chart;
+export default StatedGraph;
+
