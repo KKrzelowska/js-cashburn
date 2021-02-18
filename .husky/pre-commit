@@ -1,5 +1,6 @@
 #!/bin/sh
 . "$(dirname $0)/_/husky.sh"
-npm run lint
+#echo $(tput setaf 10)'Pre-commit: RUN ESLINT'; tput setaf 15;
+#npm run lint
 echo $(tput setaf 10)'Pre-commit: RUN PRETTIER'; tput setaf 15;
 npm run prettier
