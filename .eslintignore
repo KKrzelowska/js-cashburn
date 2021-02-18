@@ -1,8 +1,4 @@
-./docker-compose.debug.yml
-./docker-compose.yml
-./Dockerfile
-./package-lock.json
-./package.json
-./tsconfig.json
-./webpack.config.js
-./yarn.lock
+node_modules
+public/script/bundle.js
+.husky/_
+cypress/
