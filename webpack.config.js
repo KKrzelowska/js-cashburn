@@ -1,5 +1,4 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: './src/main.tsx',
@@ -32,6 +31,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [],
-  exclude: node_modules
+  plugins: []
 }
