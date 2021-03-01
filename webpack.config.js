@@ -19,7 +19,7 @@ module.exports = {
     rules: [
       {
         test: /\.[tj]sx?$/,
-        exclude: /node_modules/,
+        exclude:path.resolve(__dirname, "node_modules"),
         loader: 'babel-loader'
       },
       {
