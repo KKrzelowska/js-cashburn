@@ -6,28 +6,25 @@ name: Node.js CI
 on: [push, pull_request]
 jobs:
   test:
-
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         node-version: [14.x]
 
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm test
-    - name: test:e2e
-      uses: cypress-io/github-action@v2
-      with:
-        build: npm run build
-        browser: chrome
-        start: npm start
-        env: host=api.dev.local,port=4222
-        wait-on: http://localhost:8080
-
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm test
+      - name: test:e2e
+        uses: cypress-io/github-action@v2
+        with:
+          build: npm run build
+          browser: chrome
+          start: npm start
+          env: host=api.dev.local,port=4222
+          wait-on: http://localhost:8080

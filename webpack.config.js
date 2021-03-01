@@ -1,5 +1,4 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: './src/main.tsx',
@@ -20,7 +19,7 @@ module.exports = {
     rules: [
       {
         test: /\.[tj]sx?$/,
-        exclude: /node_modules/,
+        exclude:path.resolve(__dirname, "node_modules"),
         loader: 'babel-loader'
       },
       {
@@ -32,6 +31,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [],
-  exclude: node_modules
+  plugins: []
 }
