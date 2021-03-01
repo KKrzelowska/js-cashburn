@@ -9,8 +9,8 @@
     "start": "ts-node server/server.ts",
     "build": "webpack --mode production",
     "test": "jest",
-    "test:e2e": "cypress run mainTest.e2e-test",
-    "lint": "eslint . --ext .ts",
+    "cypress run": "cypress open mainTest.e2e-test",
+    "lint": "eslint . --ext .js,.tsx,.ts",
     "prettier": "prettier --check ./"
   },
   "author": "Karo",

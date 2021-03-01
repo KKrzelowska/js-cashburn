@@ -1,4 +1,4 @@
-Ignore auto generated files
 node_modules
 public/script/bundle.js
 .husky/_
+cypress/

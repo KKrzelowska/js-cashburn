@@ -12,8 +12,8 @@ class BalanceService {
   }
 
   addBalance(valueFromBalanceForm: number) {
-    let valuesDatesFromMemory = this.memoryService.getValues();
-    let valueWithDate = { date: new Date(), value: valueFromBalanceForm };
+    const valuesDatesFromMemory = this.memoryService.getValues();
+    const valueWithDate = { date: new Date(), value: valueFromBalanceForm };
     this.balances = [valueWithDate, ...valuesDatesFromMemory];
     this.memoryService.saveValues(this.balances);
   }

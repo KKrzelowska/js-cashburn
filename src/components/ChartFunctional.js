@@ -3,7 +3,7 @@ import { Line } from 'react-chartjs-2';
 import moment from 'moment';
 
 export default ({ values }) => {
-  let currentMonthDates = Array.from(
+  const currentMonthDates = Array.from(
     { length: moment().daysInMonth() },
     (x, i) => moment().startOf('month').add(i, 'days')
   );
