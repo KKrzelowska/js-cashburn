@@ -4,6 +4,7 @@ module.exports = {
   entry: './src/main.tsx',
   devtool: 'eval-source-map',
   mode: 'development',
+  target: 'node', //fix node_modules  
   output: {
     path: path.join(__dirname, '/public/script'),
     filename: 'bundle.js',
