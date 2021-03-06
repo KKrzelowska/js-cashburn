@@ -1,8 +1,8 @@
 import React from 'react';
 import StatedGraph from '../StatedGraph';
 import BalanceService from '../BalanceService';
-
 import ChartFunctional from '../ChartFunctional';
+
 const GraphForm = () => {
   return (
     <>
@@ -10,6 +10,6 @@ const GraphForm = () => {
       <StatedGraph balanceService={BalanceService.instance} />
     </>
   );
-}
+};
 
-export default DashboardPage;
+export default GraphForm;
