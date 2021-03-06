@@ -2,7 +2,7 @@ import React from 'react';
 import { Line } from 'react-chartjs-2';
 import moment from 'moment';
 
-const ComplexGraph = ({ balances }) => {
+export default ({ values }) => {
   const currentMonthDates = Array.from(
     { length: moment().daysInMonth() },
     (x, i) => moment().startOf('month').add(i, 'days')

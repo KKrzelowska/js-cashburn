@@ -1,5 +1,5 @@
 class MemoryService {
-  storageKey: string = 'values';
+  storageKey = 'values';
 
   recoverTypesFromParsedJSON(
     valuesFromLocalStorage: { date: string; value: number }[]
