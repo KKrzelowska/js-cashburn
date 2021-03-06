@@ -1,20 +1,14 @@
 import React from 'react';
+import StatedGraph from '../StatedGraph';
+import BalanceService from '../BalanceService';
 
-import ChartFunctional from '../ChartFunctional';
-let GraphForm = () => {
+const DashboardPage = () => {
   return (
-    <div>
+    <>
       <h1>GraphPage</h1>
-      <ChartFunctional
-        values={[
-          [new Date('December 17, 2020 03:24:00'), 20.2],
-          [new Date('December 17, 2020 06:24:00'), 20.2],
-          [new Date('December 19, 2020 12:24:00'), 42.2],
-          [new Date('December 20, 2020 12:24:00'), 53.2]
-        ]}
-      />
-    </div>
+      <StatedGraph balanceService={BalanceService.instance} />
+    </>
   );
-};
+}
 
-export default GraphForm;
+export default DashboardPage;

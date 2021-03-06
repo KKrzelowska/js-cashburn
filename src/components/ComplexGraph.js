@@ -2,13 +2,15 @@ import React from 'react';
 import { Line } from 'react-chartjs-2';
 import moment from 'moment';
 
-export default ({ values }) => {
-  let currentMonthDates = Array.from(
+const ComplexGraph = ({ balances }) => {
+  const currentMonthDates = Array.from(
     { length: moment().daysInMonth() },
     (x, i) => moment().startOf('month').add(i, 'days')
   );
-
-  const dataFromValues = values.map(arr => ({ t: arr.date, y: arr.value }));
+  const dataFromValues = balances.map(arr => ({
+    t: arr.date,
+    y: arr.value
+  }));
 
   const dataChart = {
     labels: currentMonthDates,
@@ -20,14 +22,11 @@ export default ({ values }) => {
         borderWidth: 1
       }
     ]
-  };
-
+  }
   return (
-    <>
-      <div
+     <div
         className="Chart"
         style={{ position: 'relative', width: 600, height: 550 }}>
-        Chart Functional Component
         <Line
           data={dataChart}
           options={{
@@ -67,6 +66,7 @@ export default ({ values }) => {
           }}
         />
       </div>
-    </>
   );
 };
+
+export default ComplexGraph;
