@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import StatedBalanceForm from '../StatedBalanceForm';
 import BalanceService from '../BalanceService';
 
-const NameForm = () => {
+const NameForm = (): ReactElement => {
   return (
     <div>
       <h1>MainPage</h1>

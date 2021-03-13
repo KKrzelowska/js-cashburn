@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Navigation = () => {
+const Navigation = (): ReactElement => {
   return (
     <div>
       <NavLink to="/">Home</NavLink>

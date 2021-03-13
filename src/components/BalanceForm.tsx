@@ -1,4 +1,8 @@
-import React, { ChangeEventHandler, MouseEventHandler } from 'react';
+import React, {
+  ChangeEventHandler,
+  MouseEventHandler,
+  ReactElement
+} from 'react';
 
 import {
   Button,
@@ -24,7 +28,7 @@ class BalanceForm extends React.Component<Props, State> {
     this.handleSubmit = () => props.callback(this.state.value);
   }
 
-  render() {
+  render(): ReactElement {
     return (
       <Container>
         <PageBox>

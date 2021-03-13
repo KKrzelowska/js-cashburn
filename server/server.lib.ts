@@ -1,6 +1,6 @@
 import express from 'express';
 
-import webpack from 'webpack';
+import webpack, { Configuration } from 'webpack';
 import WebpackMiddleware from 'webpack-dev-middleware';
 
 import config from '../webpack.config';
@@ -9,14 +9,15 @@ import * as path from 'path';
 import rewrite from 'express-urlrewrite';
 
 export function createDevServer(): Promise<void> {
-  return new Promise(async resolve => {
+  return new Promise((resolve, reject) => {
     const server = express();
-
-    await configureRoutes(server);
-
-    server.listen(8080, () => {
-      resolve();
-    });
+    configureRoutes(server)
+      .then(() =>
+        server.listen(8080, () => {
+          resolve();
+        })
+      )
+      .catch(err => reject(err));
   });
 }
 
@@ -26,10 +27,12 @@ async function configureRoutes(server: express.Express) {
   directToIndex(server);
 }
 
-async function directToWebpackButWaitForCompilation(server: express.Express) {
+async function directToWebpackButWaitForCompilation(
+  server: express.Express
+): Promise<void> {
   return new Promise(resolve => {
-    // @ts-ignore
-    const compiler = webpack(config); // ignoring because config is not typed
+    const configuration: Configuration = config as Configuration;
+    const compiler = webpack(configuration);
     const webpackMiddleware = WebpackMiddleware(compiler, {
       writeToDisk: true
     });

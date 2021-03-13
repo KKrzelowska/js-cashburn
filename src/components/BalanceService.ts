@@ -1,24 +1,27 @@
 import MemoryService from '../core/MemoryService';
 import { makeAutoObservable } from 'mobx';
 
-class BalanceService {
-  private balances: { date: Date; value: number }[];
-  private memoryService: MemoryService;
+export interface Balance {
+  date: Date;
+  value: number;
+}
 
-  constructor(memoryService: MemoryService) {
-    this.memoryService = MemoryService.instance;
+class BalanceService {
+  private balances: Balance[];
+
+  constructor(private memoryService: MemoryService) {
     this.balances = this.memoryService.getValues();
     makeAutoObservable(this);
   }
 
-  addBalance(valueFromBalanceForm: number) {
+  addBalance(valueFromBalanceForm: number): void {
     const valuesDatesFromMemory = this.memoryService.getValues();
     const valueWithDate = { date: new Date(), value: valueFromBalanceForm };
     this.balances = [valueWithDate, ...valuesDatesFromMemory];
     this.memoryService.saveValues(this.balances);
   }
 
-  public getBalances() {
+  public getBalances(): Balance[] {
     return this.balances;
   }
 

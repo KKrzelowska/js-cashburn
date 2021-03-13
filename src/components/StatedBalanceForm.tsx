@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import BalanceForm from './BalanceForm';
 import BalanceService from './BalanceService';
 
@@ -11,7 +11,7 @@ class StatedBalanceForm extends React.Component<Props, State> {
     this.state = { value: 0 };
   }
 
-  render() {
+  render(): ReactElement {
     const callback = (value: number) => {
       this.props.balanceService.addBalance(value);
     };

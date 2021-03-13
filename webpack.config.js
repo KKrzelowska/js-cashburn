@@ -1,10 +1,10 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   entry: './src/main.tsx',
   devtool: 'eval-source-map',
   mode: 'development',
-  target: 'node', //fix node_modules  
+  target: 'node',
   output: {
     path: path.join(__dirname, '/public/script'),
     filename: 'bundle.js',
@@ -20,17 +20,14 @@ module.exports = {
     rules: [
       {
         test: /\.[tj]sx?$/,
-        exclude:path.resolve(__dirname, "node_modules"),
+        exclude: path.resolve(__dirname, 'node_modules'),
         loader: 'babel-loader'
       },
       {
         test: /\.(css)$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
   plugins: []
-}
+};

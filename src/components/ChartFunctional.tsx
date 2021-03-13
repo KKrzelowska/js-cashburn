@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { Line } from 'react-chartjs-2';
 import moment from 'moment';
+import { Balance } from './BalanceService';
 
-export default ({ values }) => {
+const chartFunctional = ({ values }: { values: Balance[] }): ReactElement => {
   const currentMonthDates = Array.from(
     { length: moment().daysInMonth() },
     (x, i) => moment().startOf('month').add(i, 'days')
   );
 
-  const dataFromValues = values.map(arr => ({ t: arr.date, y: arr.value }));
+  const dataFromValues = values.map((balance: Balance) => ({
+    t: balance.date,
+    y: balance.value
+  }));
 
   const dataChart = {
     labels: currentMonthDates,
@@ -70,3 +74,5 @@ export default ({ values }) => {
     </>
   );
 };
+
+export default chartFunctional;
