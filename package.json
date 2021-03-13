@@ -42,6 +42,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.22.0",
     "express": "^4.17.1",
+    "file-loader": "^6.2.0",
     "husky": "^5.0.4",
     "jest": "^26.5.2",
     "jest-localstorage-mock": "^2.4.3",
@@ -50,6 +51,7 @@
     "ts-jest": "^26.4.1",
     "ts-loader": "^8.0.4",
     "typescript": "^4.0.3",
+    "url-loader": "^4.1.1",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-middleware": "^4.0.2",
@@ -73,7 +75,8 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.2.1",
-    "ts-node": "^9.0.0"
+    "ts-node": "^9.0.0",
+    "ttf-loader": "^1.0.2"
   },
   "jest": {
     "setupFiles": [

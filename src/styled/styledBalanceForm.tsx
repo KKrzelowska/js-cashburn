@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
-import {} from '../styled/styledBalanceForm';
 
 const Container = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
 `;
 
 const PageBox = styled.div`
@@ -43,20 +41,37 @@ const Button = styled.button`
   border-radius: 1px;
   border-width: 0;
   cursor: pointer;
-  &:focus {
-    animation: 0.75s ${scaled} cubic-bezier(0.77, 0, 0.175, 1) forwards;
-    outline: none;
-  }
+    &:focus {
+      animation: 0.75s ${scaled} cubic-bezier(0.77, 0, 0.175, 1) forwards;
+      outline: none;
+    };
   margin-left: auto;
-  margin-top: 3rem;
+  margin-top: 3rem; 
+  @media(max-width: 768px){
+      width: 225px;
+      height: 60px;
+      font-size: 24px; 
+      margin: 3rem auto;
+    };
 `;
 
 const Label = styled.label`
-  color: #524e4d;
+  color: black;
   font-family: Teko;
   font-size: 60px;
-  font-weight: 400;
+  font-weight: semi-bold;
   text-align: center;
+    &.subtitle{
+      font-size: 25px;
+      font-weight: light;
+    };
+  @media(max-width: 768px){
+    font-size: 20px;
+    margin-top: 20px;
+    &.subtitle{
+      font-size: 16px;
+    }
+  }
 `;
 
 const Input = styled.input`
@@ -75,7 +90,20 @@ const Input = styled.input`
   &:focus {
     border: 1px solid #524e4d;
     outline: none;
-  }
+  };
+  @media(max-width: 768px){
+      width: 225px;
+      height: 50px;
+      font-size: 28px; 
+    };
 `;
 
-export { Input, Button, Label, PageBox, Container };
+const Img = styled.img`
+  width: 165px;
+  height: 103px;
+  margin-top: 100px;
+
+`;
+
+
+export { Input, Button, Label, PageBox, Container, Img };
