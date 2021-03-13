@@ -6,7 +6,7 @@ import {
   Label,
   PageBox,
   Container,
-  Img,
+  Img
 } from '../styled/styledBalanceForm';
 
 type Props = { callback: (value: number) => void };
@@ -29,9 +29,11 @@ class BalanceForm extends React.Component<Props, State> {
     return (
       <Container>
         <PageBox>
-          <Img src={money} alt={`money icon`}/>
+          <Img src={money} alt={`money icon`} />
           <Label>Ustaw saldo dla gotówki</Label>
-          <Label className="subtitle">Ile pieniędzy faktycznie posiadasz w portfelu?</Label>
+          <Label className="subtitle">
+            Ile pieniędzy faktycznie posiadasz w portfelu?
+          </Label>
           <Input
             className="input"
             type="number"

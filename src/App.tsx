@@ -5,7 +5,6 @@ import NameForm from './components/pages/StatedNameForm';
 import DashboardPage from './components/pages/StatedGraphForm';
 import './styled/index.css';
 
-
 const App = () => {
   return (
     <div className="App">

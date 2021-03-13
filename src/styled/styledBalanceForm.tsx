@@ -41,18 +41,18 @@ const Button = styled.button`
   border-radius: 1px;
   border-width: 0;
   cursor: pointer;
-    &:focus {
-      animation: 0.75s ${scaled} cubic-bezier(0.77, 0, 0.175, 1) forwards;
-      outline: none;
-    };
+  &:focus {
+    animation: 0.75s ${scaled} cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    outline: none;
+  }
   margin-left: auto;
-  margin-top: 3rem; 
-  @media(max-width: 768px){
-      width: 225px;
-      height: 60px;
-      font-size: 24px; 
-      margin: 3rem auto;
-    };
+  margin-top: 3rem;
+  @media (max-width: 768px) {
+    width: 225px;
+    height: 60px;
+    font-size: 24px;
+    margin: 3rem auto;
+  } ;
 `;
 
 const Label = styled.label`
@@ -61,14 +61,14 @@ const Label = styled.label`
   font-size: 60px;
   font-weight: semi-bold;
   text-align: center;
-    &.subtitle{
-      font-size: 25px;
-      font-weight: light;
-    };
-  @media(max-width: 768px){
+  &.subtitle {
+    font-size: 25px;
+    font-weight: light;
+  }
+  @media (max-width: 768px) {
     font-size: 20px;
     margin-top: 20px;
-    &.subtitle{
+    &.subtitle {
       font-size: 16px;
     }
   }
@@ -90,20 +90,18 @@ const Input = styled.input`
   &:focus {
     border: 1px solid #524e4d;
     outline: none;
-  };
-  @media(max-width: 768px){
-      width: 225px;
-      height: 50px;
-      font-size: 28px; 
-    };
+  }
+  @media (max-width: 768px) {
+    width: 225px;
+    height: 50px;
+    font-size: 28px;
+  } ;
 `;
 
 const Img = styled.img`
   width: 165px;
   height: 103px;
   margin-top: 100px;
-
 `;
-
 
 export { Input, Button, Label, PageBox, Container, Img };
