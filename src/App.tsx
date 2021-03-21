@@ -1,28 +1,32 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Navigation from './components/pages/Navigation';
+import { Redirect, Route, Router, Switch } from 'react-router-dom';
 import NameForm from './components/pages/StatedNameForm';
 import DashboardPage from './components/pages/StatedGraphForm';
 import './styled/index.css';
+import RoutingService from './components/pages/Routing';
 
-const App = () => {
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <div>
-          <Navigation />
-          <Switch>
-            <Route path="/" exact>
-              <NameForm />
-            </Route>
-            <Route path="/graph">
-              <DashboardPage />
-            </Route>
-          </Switch>
-        </div>
-      </BrowserRouter>
-    </div>
-  );
-};
+class App extends React.Component<{}, {}> {
+  render() {
+    return (
+      <div className="App">
+        <Router history={RoutingService.instance.getHistory()}>
+          <div>
+            <Switch>
+              <Route path="/" exact>
+                <Redirect to={'/home'} />
+              </Route>
+              <Route path="/home" exact>
+                <NameForm />
+              </Route>
+              <Route path="/graph" exact>
+                <DashboardPage />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
+      </div>
+    );
+  }
+}
 
 export default App;
