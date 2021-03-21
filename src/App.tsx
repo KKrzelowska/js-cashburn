@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Redirect, Route, Router, Switch } from 'react-router-dom';
-import './styled/index.css';
 import NameForm from './components/pages/StatedNameForm';
-import GraphForm from './components/pages/StatedGraphForm';
+import DashboardPage from './components/pages/StatedGraphForm';
+import './styled/index.css';
 import RoutingService from './components/pages/Routing';
 
-export default class App extends Component {
+class App extends React.Component<{}, {}> {
   render() {
     return (
       <div className="App">
@@ -18,8 +18,8 @@ export default class App extends Component {
               <Route path="/home" exact>
                 <NameForm />
               </Route>
-              <Route path="/graph">
-                <GraphForm />
+              <Route path="/graph" exact>
+                <DashboardPage />
               </Route>
             </Switch>
           </div>
@@ -28,3 +28,5 @@ export default class App extends Component {
     );
   }
 }
+
+export default App;

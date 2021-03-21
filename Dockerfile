@@ -9,13 +9,12 @@ WORKDIR /app
 # Copy the file from your host to your current location.
 COPY package.json .
 
-
 # Run the command inside your image filesystem.
 RUN npm install
 ENV Path /usr/src/app/node_modules/.bin:$PATH
 
 # Add metadata to the image to describe which port the container is listening on at runtime.
-EXPOSE 8080
+EXPOSE 8000
 
 # Run the specified command within the container.
 CMD [ "npm", "start" ]

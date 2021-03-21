@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import StatedBalanceForm from '../StatedBalanceForm';
 import BalanceService from '../BalanceService';
 
-let NameForm = (): ReactElement => {
+const NameForm = (): ReactElement => {
   return (
     <div>
       <StatedBalanceForm balanceService={BalanceService.instance} />

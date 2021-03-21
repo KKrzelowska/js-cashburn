@@ -1,14 +1,14 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path')
 
 module.exports = {
-  entry: "./src/main.tsx",
-  devtool: "eval-source-map",
-  mode: "development",
+  entry: './src/main.tsx',
+  devtool: 'eval-source-map',
+  mode: 'development',
+  target: 'node', //fix node_modules  
   output: {
-    path: path.join(__dirname, "/public/script"),
-    filename: "bundle.js",
-    publicPath: "/script/"
+    path: path.join(__dirname, '/public/script'),
+    filename: 'bundle.js',
+    publicPath: '/script/'
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx']
@@ -20,17 +20,17 @@ module.exports = {
     rules: [
       {
         test: /\.[tj]sx?$/,
-        exclude: /node_modules/,
-        loader: "babel-loader",
+        exclude:path.resolve(__dirname, "node_modules"),
+        loader: 'babel-loader'
       },
       {
         test: /\.(css)$/,
         use: [
-          "style-loader",
-          "css-loader"
-        ],
-      },
-    ],
+          'style-loader',
+          'css-loader'
+        ]
+      }
+    ]
   },
-  plugins: [],
-};
+  plugins: []
+}
