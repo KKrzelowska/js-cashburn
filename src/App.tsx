@@ -1,18 +1,30 @@
-import React from 'react';
-import { observer } from 'mobx-react-lite';
-
-import BalanceService from './components/BalanceService';
-import Navigation from './components/pages/Navigation';
+import React, { Component } from 'react';
+import { Redirect, Route, Router, Switch } from 'react-router-dom';
 import './styled/index.css';
+import NameForm from './components/pages/StatedNameForm';
+import GraphForm from './components/pages/StatedGraphForm';
+import RoutingService from './components/pages/Routing';
 
-const App = observer(
-  ({ balanceService }: { balanceService: BalanceService }) => {
+export default class App extends Component {
+  render() {
     return (
       <div className="App">
-        <Navigation></Navigation>
+        <Router history={RoutingService.instance.getHistory()}>
+          <div>
+            <Switch>
+              <Route path="/" exact>
+                <Redirect to={'/home'} />
+              </Route>
+              <Route path="/home" exact>
+                <NameForm />
+              </Route>
+              <Route path="/graph">
+                <GraphForm />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
       </div>
     );
   }
-);
-
-export default App;
+}

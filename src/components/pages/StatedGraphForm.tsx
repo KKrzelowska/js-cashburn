@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 import ChartFunctional from '../ChartFunctional';
 
-let GraphForm = () => {
+let GraphForm = (): ReactElement => {
   return (
     <div>
       <ChartFunctional
