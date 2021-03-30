@@ -21,16 +21,14 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint",
-    "prettier",
-    "cypress"
-  ],
+  "plugins": ["react", "@typescript-eslint", "prettier", "cypress"],
   "rules": {
     "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": ["error", {"functions": false}],
-    "no-eval":"warn",
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      { "functions": false }
+    ],
+    "no-eval": "warn",
     "spaced-comment": "warn",
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
@@ -41,6 +39,6 @@
     "cypress/no-force": "warn",
     "cypress/no-async-tests": "error",
     "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/no-unused-vars":"off"
+    "@typescript-eslint/no-unused-vars": "off"
   }
 }
