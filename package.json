@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "postinstall": "husky install",
+    "postinstall": "husky install || true",
     "start": "ts-node server/server.ts",
     "build": "webpack --mode production",
     "test": "jest",
@@ -61,6 +61,7 @@
     "@babel/node": "^7.12.6",
     "@types/express": "^4.17.9",
     "@types/express-urlrewrite": "^1.2.1",
+    "@types/history": "^4.7.8",
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.7",
     "chart.js": "^2.9.4",

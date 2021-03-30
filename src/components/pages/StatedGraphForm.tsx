@@ -1,7 +1,6 @@
 import React from 'react';
 import StatedGraph from '../StatedGraph';
 import BalanceService from '../BalanceService';
-import ChartFunctional from '../ChartFunctional';
 
 const GraphForm = () => {
   return (
