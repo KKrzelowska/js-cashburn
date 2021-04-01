@@ -4,10 +4,13 @@ import NameForm from './components/pages/StatedNameForm';
 import DashboardPage from './components/pages/StatedGraphForm';
 import './styled/index.css';
 import RoutingService from './components/pages/Routing';
+import GlobalStyle from './styled/globalStyle';
 
 class App extends React.Component<{}, {}> {
   render() {
     return (
+      <>
+      <GlobalStyle />
       <div className="App">
         <Router history={RoutingService.instance.getHistory()}>
           <div>
@@ -25,6 +28,7 @@ class App extends React.Component<{}, {}> {
           </div>
         </Router>
       </div>
+      </>
     );
   }
 }
